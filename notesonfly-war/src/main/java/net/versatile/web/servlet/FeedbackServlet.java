@@ -45,6 +45,7 @@ public class FeedbackServlet extends HttpServlet{
 			logger.info("Adding Feedback to datastore: " + feedback.toString());
 			feedbackProvider.addFeedback(feedback);
 		} catch (DataStoreException datastoreException) {
+			logger.warning("Exception occured: " + datastoreException.getMessage());
 			response.getWriter().print(datastoreException.getMessage());
 		}
 
