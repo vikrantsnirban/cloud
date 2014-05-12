@@ -1,0 +1,10 @@
+<!-- Indices written at Sat, 10 May 2014 14:56:06 IST -->
+
+<datastore-indexes>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Comment" ancestor="true" source="auto">
+        <property name="updateTime" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>

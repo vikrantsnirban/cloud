@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<welcome-file-list>
+		<welcome-file> index.jsp </welcome-file>
+	</welcome-file-list>
+	
+	<servlet-mapping>
+		<servlet-name>infoServlet</servlet-name>
+		<url-pattern>/information</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>infoServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.InformationServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>feedbackServlet</servlet-name>
+		<url-pattern>/feedback</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>feedbackServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.FeedbackServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>notebookServlet</servlet-name>
+		<url-pattern>/notebook</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>notebookServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.NotebookServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>noteServlet</servlet-name>
+		<url-pattern>/note</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>noteServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.NoteServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>mailServlet</servlet-name>
+		<url-pattern>/mail</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>mailServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.MailServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>incomingMailServlet</servlet-name>
+		<url-pattern>/_ah/mail/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>incomingMailServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.IncomingMailServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>feedbackReportServlet</servlet-name>
+		<url-pattern>/feedbackreport</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>feedbackReportServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.FeedbackReportServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>applifeCycleServlet</servlet-name>
+		<url-pattern>/applifereport</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>applifeCycleServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.AppLifecycleServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+</web-app>
