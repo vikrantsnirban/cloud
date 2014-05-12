@@ -71,7 +71,7 @@ public class AppLifecycleServlet extends HttpServlet{
 		    
 		    /*Object cronHeader = request.getHeader("X-AppEngine-Cron");
 		    if(cronHeader != null && Boolean.getBoolean(cronHeader.toString()) == Boolean.TRUE){
-		    */	new MailProviderImpl().sendMail("vikrantsnirban@hotmail.com", "vikrantsnirban@gmail.com", "NotesOnFly-Admin", "Resource: Mail Usage Report", builder.toString());
+		    */	new MailProviderImpl().sendMail("vikrantsnirban@hotmail.com", "vikrantsnirban@gmail.com", "NotesOnFly-Admin", "Resource: "+ resourceName +" Usage Report", builder.toString());
 		    //}
 		    
 	    }else{

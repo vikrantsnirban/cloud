@@ -85,5 +85,15 @@
 		<servlet-class>net.versatile.web.servlet.AppLifecycleServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>taskServlet</servlet-name>
+		<url-pattern>/task</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>taskServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.TaskServlet</servlet-class>
+	</servlet>
 	
 </web-app>
