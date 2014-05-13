@@ -3,6 +3,12 @@ package net.versatile.notesonfly.gaesupport;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.versatile.notesonfly.exceptions.DataRetievalException;
+import net.versatile.notesonfly.exceptions.DataStoreException;
+import net.versatile.notesonfly.model.Subscriber;
+import net.versatile.notesonfly.service.SubscriberSupport;
+import net.versatile.web.utils.AppConstants;
+
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -10,12 +16,6 @@ import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Query;
-
-import net.versatile.notesonfly.exceptions.DataRetievalException;
-import net.versatile.notesonfly.exceptions.DataStoreException;
-import net.versatile.notesonfly.model.Subscriber;
-import net.versatile.notesonfly.service.SubscriberSupport;
-import net.versatile.web.utils.AppConstants;
 
 public class SubscriberSupportProvider implements SubscriberSupport{
 
