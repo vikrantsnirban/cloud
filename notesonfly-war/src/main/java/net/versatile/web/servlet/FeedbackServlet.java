@@ -24,13 +24,15 @@ import net.versatile.notesonfly.service.MailProvider;
 import net.versatile.notesonfly.service.SubscriberSupport;
 import net.versatile.notesonfly.service.UserManager;
 import net.versatile.web.utils.AppConstants;
+import net.versatile.notesonfly.service.CacheManager;
+import net.versatile.notesonfly.gaesupport.CacheManagerImpl;
 
 public class FeedbackServlet extends HttpServlet{
 	
 	SubscriberSupport subsriberProvider  = new SubscriberSupportProvider();
 	MailProvider mailProvider = new MailProviderImpl();
 	Logger logger = java.util.logging.Logger.getLogger(this.getClass().getName());
-	 
+	CacheManager cacheManager = new CacheManagerImpl();  
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -53,7 +55,7 @@ public class FeedbackServlet extends HttpServlet{
 		String status = AppConstants.STATUS_SUCCESS;
 		
 		try {
-			List<Subscriber> subscribersInList = subsriberProvider.getAllSubscribers();
+			List<Subscriber> subscribersInList = cacheManager.getAllSubsribers();//subsriberProvider.getAllSubscribers();
 			Set<Subscriber> subscribers = new HashSet<Subscriber>(subscribersInList);
 			for(Subscriber subscriber : subscribers){
 				logger.info("Sending mail to " + subscriber.toString());
@@ -61,7 +63,8 @@ public class FeedbackServlet extends HttpServlet{
 			}
 
 		} catch (Exception exception) {
-			logger.warning("Exception occured: " + exception.getMessage());
+			ogger.warning("Exception occured: " + exception.getMessage());
+			exception.printStackTrace();
 			status = exception.getMessage();
 		} 
 
