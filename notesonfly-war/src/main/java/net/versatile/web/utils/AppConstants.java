@@ -26,4 +26,5 @@ public class AppConstants {
 	public static final String SUBSCRIBER_EMAIL = "emailAddress";
 	
 	public static final String STATUS_SUCCESS = "success";
+	public static final String ALL_SUBSCRIBERS_KEY = "allsubscribers";
 }

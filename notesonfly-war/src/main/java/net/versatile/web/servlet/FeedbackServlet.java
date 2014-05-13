@@ -63,7 +63,7 @@ public class FeedbackServlet extends HttpServlet{
 			}
 
 		} catch (Exception exception) {
-			ogger.warning("Exception occured: " + exception.getMessage());
+			logger.warning("Exception occured: " + exception.getMessage());
 			exception.printStackTrace();
 			status = exception.getMessage();
 		} 

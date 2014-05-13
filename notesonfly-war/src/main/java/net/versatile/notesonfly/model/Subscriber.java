@@ -1,6 +1,8 @@
 package net.versatile.notesonfly.model;
 
-public class Subscriber {
+import java.io.Serializable;
+
+public class Subscriber implements Serializable{
 	String emailAddress;
 
 	public Subscriber(){}
