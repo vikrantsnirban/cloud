@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cronentries>
-	<cron>
+<!-- 	<cron>
 		<url>/feedbackreport</url>
 		<description>All Feedback report to subscribed Users</description>
 		<schedule> every day 14:30 </schedule>
-	</cron>
+	</cron> -->
 	<cron>
 		<url>/applifereport?resource=mail</url>
 		<description>Incoming Mail Resource Utilization</description>
