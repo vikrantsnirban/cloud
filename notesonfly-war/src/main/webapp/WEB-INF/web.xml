@@ -96,4 +96,14 @@
 		<servlet-class>net.versatile.web.servlet.TaskServlet</servlet-class>
 	</servlet>
 	
+	<servlet-mapping>
+		<servlet-name>chatServlet</servlet-name>
+		<url-pattern>/chat</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>chatServlet</servlet-name>
+		<servlet-class>net.versatile.web.servlet.ChatServlet</servlet-class>
+	</servlet>
+	
 </web-app>
