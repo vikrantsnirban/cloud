@@ -2,7 +2,7 @@ package net.versatile.notesonfly.model;
 
 import java.util.Date;
 
-public class Feedback {
+public class Feedback implements Comparable<Feedback>{
 	String content;
 	String userName;
 	Date updateTime;
@@ -37,5 +37,9 @@ public class Feedback {
 	@Override
 	public String toString() {
 		return content + " added by " + userName + " at " + updateTime;
+	}
+	
+	@Override public int compareTo(Feedback feedback) {
+		return feedback.getUpdateTime().compareTo(this.updateTime);
 	}
 }
