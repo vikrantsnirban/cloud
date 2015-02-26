@@ -1,5 +1,5 @@
 <%@ page import="com.google.appengine.api.datastore.Entity" %>
-<%@ page import="net.versatile.notesonfly.gaesupport.FeedbackSupportProvider" %>
+<%@ page import="net.versatile.notesonfly.sqlite.FeedbackSupportProvider" %>
 <%@ page import="net.versatile.notesonfly.service.FeedbackSupport" %>
 <%@ page import="net.versatile.notesonfly.model.Feedback" %>
 <%@ page import="net.versatile.web.utils.AppConstants" %>
@@ -17,7 +17,7 @@
 		if(user != null){ 
 			isUserLoggedIn = true;
 			
-			String [] validUsers = {"apurvaaeron", "muk.yadav", "sethi.gaurav2004", "vivekkohli2004", "peerhasan", "akhera2012", "vikrantsnirban"};
+			String [] validUsers = {"apurvaaeron", "muk.yadav", "sethi.gaurav2004", "vivekkohli2004", "peerhasan", "akhera2012", "vikrantsnirban", "sarabjitsb"};
 			for(String userName: validUsers){
 				if(user.getNickname().trim().equalsIgnoreCase(userName)){
 					isUserValid = true;

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.versatile.notesonfly.exceptions.DataStoreException;
-import net.versatile.notesonfly.gaesupport.FeedbackSupportProvider;
+import net.versatile.notesonfly.sqlite.FeedbackSupportProvider;
 import net.versatile.notesonfly.gaesupport.MailProviderImpl;
 import net.versatile.notesonfly.gaesupport.SubscriberSupportProvider;
 import net.versatile.notesonfly.gaesupport.UserManagerImpl;
