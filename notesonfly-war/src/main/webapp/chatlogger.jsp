@@ -8,6 +8,9 @@
 <%@page import="com.google.appengine.api.users.User" %>
 <%@page import="com.google.appengine.api.users.UserService" %>
 <%@page import="com.google.appengine.api.users.UserServiceFactory" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.TimeZone" %>
  <head>
 	<meta http-equiv="refresh" content="5">
 </head> 
@@ -40,7 +43,12 @@
 				Collections.sort(feedbacks);
 				for(Feedback feedback : feedbacks){
 			%>
-			<p> <%=feedback.getUserName()%>: &nbsp; <%=feedback.getContent() %> </p>
+			<p> <%
+									DateFormat gmtFormat = new SimpleDateFormat();
+		    			TimeZone gmtTime = TimeZone.getTimeZone("IST");
+		    			gmtFormat.setTimeZone(gmtTime);
+		    	%>
+		    	<%= gmtFormat.format(feedback.getUpdateTime()) %> &nbsp; <%=feedback.getUserName()%>: &nbsp; <%=feedback.getContent() %> </p>
 		<%}}%>
 	<% }%>
 	
