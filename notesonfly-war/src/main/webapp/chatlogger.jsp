@@ -11,20 +11,31 @@
 <%@ page import="java.text.DateFormat" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.TimeZone" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Map" %>
  <head>
 	<meta http-equiv="refresh" content="5">
 </head> 
 
 	<%! boolean isUserLoggedIn = false; %>
 	<%! boolean isUserValid = false; %>
+	<%! Map<String, String> validUserMap = new HashMap<String, String>(); %>
 	<%
 		UserService userService  = UserServiceFactory.getUserService();
 		User user = userService.getCurrentUser();
 		if(user != null){ 
 			isUserLoggedIn = true;
 			
-			String [] validUsers = {"apurvaaeron", "muk.yadav", "sethi.gaurav2004", "vivekkohli2004", "peerhasan", "akhera2012", "vikrantsnirban", "sarabjitsb"};
-			for(String userName: validUsers){
+			validUserMap.put("apurvaaeron", "Apurva");
+			validUserMap.put("muk.yadav", "Mukesh");
+			validUserMap.put("sethi.gaurav2004", "Gaurav");
+			validUserMap.put("vivekkohli2004", "Vivek");
+			validUserMap.put("peerhasan", "Peer");
+			validUserMap.put("akhera2012", "Amit");
+			validUserMap.put("vikrantsnirban", "Vikrant");
+			validUserMap.put("sarabjitsb", "Sarabjit");
+			
+			for(String userName: validUserMap.keySet()){
 				if(user.getNickname().trim().equalsIgnoreCase(userName)){
 					isUserValid = true;
 				}
@@ -34,6 +45,7 @@
 
 	<%if(isUserLoggedIn && isUserValid){ %>
 		<%
+			
 			FeedbackSupport feedbackSupportProvider = new FeedbackSupportProvider();
 			List<Feedback> feedbacks = feedbackSupportProvider.getAllFeedbacks();
 			if(feedbacks.isEmpty()){
@@ -48,7 +60,7 @@
 		    			TimeZone gmtTime = TimeZone.getTimeZone("IST");
 		    			gmtFormat.setTimeZone(gmtTime);
 		    	%>
-		    	<%= gmtFormat.format(feedback.getUpdateTime()) %> &nbsp; <%=feedback.getUserName()%>: &nbsp; <%=feedback.getContent() %> </p>
+		    	<%= gmtFormat.format(feedback.getUpdateTime()) %> &nbsp; <%=validUserMap.get(feedback.getUserName().trim().toLowerCase())%>: &nbsp; <%=feedback.getContent() %> </p>
 		<%}}%>
 	<% }%>
 	
