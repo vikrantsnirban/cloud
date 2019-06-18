@@ -7,11 +7,11 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>ear</packaging>
 
-  <parent>
+<!--   <parent>
     <groupId>net.versatile</groupId>
     <artifactId>notesonfly</artifactId>
     <version>1.0-SNAPSHOT</version>
-  </parent>
+  </parent> -->
 
   <build>
     <plugins>
@@ -28,7 +28,7 @@
       <plugin>
         <groupId>com.google.appengine</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
-        <version>${appengine.target.version}</version>
+        <version>1.9.75</version>
       </plugin>
     </plugins>
   </build>

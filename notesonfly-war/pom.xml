@@ -7,15 +7,18 @@
     <groupId>net.versatile</groupId>
     <artifactId>notesonfly-war</artifactId>
 
-    <parent>
+<!--     <parent>
         <groupId>net.versatile</groupId>
         <artifactId>notesonfly</artifactId>
         <version>1.0-SNAPSHOT</version>
-    </parent>
+    </parent> -->
 
     <properties>
         <appengine.app.version>dev</appengine.app.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <appengine.target.version>1.9.75</appengine.target.version>
+        <maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
     </properties>
 
     <dependencies>
