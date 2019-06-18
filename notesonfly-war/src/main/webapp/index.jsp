@@ -52,8 +52,8 @@
 			<%}%>
 			</select> <br/>
 			Enter Title: <input type="text" name="title"  /> <br/>
-			Enter Note Content : 
-			<textarea rows="4" cols="6" name="content"></textarea> <br/>
+			Enter Note Content s: 
+			<textarea rows="10" cols="20" name="content"></textarea> <br/>
 			<input type="submit" value="Add Note" />
 		</form>
 		<%if(request.getParameter("notebook") != null){ %>
